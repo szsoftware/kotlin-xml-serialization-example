@@ -6,6 +6,7 @@
  * User Manual available at https://docs.gradle.org/6.3/userguide/custom_plugins.html
  */
 
+
 plugins {
     // Apply the Java Gradle plugin development plugin to add support for developing Gradle plugins
     `java-gradle-plugin`

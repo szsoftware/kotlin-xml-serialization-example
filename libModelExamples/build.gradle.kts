@@ -3,6 +3,7 @@ val xmlutilVersion = "0.20.0.0"
 plugins {
     id("java-library")
     id("kotlin")
+    id("org.jetbrains.kotlin.plugin.serialization") version embeddedKotlinVersion
 }
 
 repositories {

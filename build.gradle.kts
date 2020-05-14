@@ -34,7 +34,14 @@ dependencies {
     // Use the Kotlin JUnit integration.
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
 
+    // For testing the external mode
     testImplementation(project(":libModelExamples"))
+    // Because of missing maven dependency managment when referencing to a local project:
+    // XML-Serialization
+    testImplementation("net.devrieze:xmlutil:0.20.0.0")
+    testImplementation("net.devrieze:xmlutil-jvm:0.20.0.0")
+    //testImplementation("net.devrieze:xmlutil-serialization:0.20.0.0")
+    testImplementation("net.devrieze:xmlutil-serialization-jvm:0.20.0.0")
 }
 
 gradlePlugin {

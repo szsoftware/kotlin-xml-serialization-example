@@ -33,6 +33,8 @@ dependencies {
 
     // Use the Kotlin JUnit integration.
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
+
+    testImplementation(project(":libModelExamples"))
 }
 
 gradlePlugin {

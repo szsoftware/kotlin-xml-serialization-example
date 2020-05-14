@@ -3,3 +3,10 @@
 
 # Ignore Gradle build output directory
 build
+
+# Ignore sensitive data
+local.properties
+
+# Ignore Idea project data
+.idea
+*.iml

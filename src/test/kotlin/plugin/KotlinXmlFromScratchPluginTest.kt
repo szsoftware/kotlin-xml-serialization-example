@@ -3,7 +3,6 @@
  */
 package plugin
 
-import com.github.szsoftware.sample.libmodelexamples.MyExampleSerializableModel
 import org.gradle.testfixtures.ProjectBuilder
 import kotlin.test.Test
 import kotlin.test.assertNotNull

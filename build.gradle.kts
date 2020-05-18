@@ -6,13 +6,22 @@
  * User Manual available at https://docs.gradle.org/6.3/userguide/custom_plugins.html
  */
 
+// val usedKotlinVersion = embeddedKotlinVersion
+val usedKotlinVersion   = properties["kotlinVersion"] // "1.3.72"
+val xmlutilVersion      = properties["xmlutilVersion"]
+val kotlinJdkVersion    = properties["kotlinJdkVersion"]
+
 
 plugins {
     // Apply the Java Gradle plugin development plugin to add support for developing Gradle plugins
     `java-gradle-plugin`
 
-    // Apply the Kotlin JVM plugin to add support for Kotlin.
-    id("org.jetbrains.kotlin.jvm") version "1.3.70"
+    // Apply the Kotlin JVM plugin to add support for Kotlin:
+    // TODO: a kotlin dsl bug does not let us use the variable:
+    // id("org.jetbrains.kotlin.plugin.serialization") version(usedKotlinVersion)
+    id("org.jetbrains.kotlin.jvm") version("1.3.72")
+    // Apply the kotlin compiler plugin for serialization support:
+    id("org.jetbrains.kotlin.plugin.serialization") version("1.3.72")
 }
 
 repositories {
@@ -26,7 +35,7 @@ dependencies {
     implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
 
     // Use the Kotlin JDK 8 standard library.
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk$kotlinJdkVersion:$usedKotlinVersion")
 
     // Use the Kotlin test library.
     testImplementation("org.jetbrains.kotlin:kotlin-test")
@@ -34,14 +43,14 @@ dependencies {
     // Use the Kotlin JUnit integration.
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
 
-    // For testing the external mode
+    // For testing the external model
     testImplementation(project(":libModelExamples"))
-    // Because of missing maven dependency managment when referencing to a local project:
+    // Because of missing maven dependency management when referencing to a local project:
     // XML-Serialization
-    testImplementation("net.devrieze:xmlutil:0.20.0.0")
-    testImplementation("net.devrieze:xmlutil-jvm:0.20.0.0")
-    //testImplementation("net.devrieze:xmlutil-serialization:0.20.0.0")
-    testImplementation("net.devrieze:xmlutil-serialization-jvm:0.20.0.0")
+    testImplementation("net.devrieze:xmlutil:$xmlutilVersion")
+    testImplementation("net.devrieze:xmlutil-jvm:$xmlutilVersion")
+    //testImplementation("net.devrieze:xmlutil-serialization:$xmlutilVersion")
+    testImplementation("net.devrieze:xmlutil-serialization-jvm:$xmlutilVersion")
 }
 
 gradlePlugin {

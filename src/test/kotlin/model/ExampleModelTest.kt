@@ -3,6 +3,7 @@ package model
 import com.github.szsoftware.sample.libmodelexamples.MyExampleGroup
 import com.github.szsoftware.sample.libmodelexamples.MyExamplePerson
 import com.github.szsoftware.sample.libmodelexamples.MyExampleSerializableModel
+import nl.adaptivity.xmlutil.XmlDeclMode
 import nl.adaptivity.xmlutil.serialization.XML
 import kotlin.test.Test
 import kotlin.test.assertEquals
@@ -51,8 +52,8 @@ class ExampleModelTest {
         val model = MyExampleSerializableModel()
 
         val format = XML {
-                omitXmlDecl = false
-                indent = 4
+                xmlDeclMode  = XmlDeclMode.Charset
+                indentString = " ".repeat(4)
         }
 
         val serializedModel = format.stringify(MyExampleSerializableModel.serializer(), model)
@@ -108,7 +109,7 @@ class ExampleModelTest {
         </group>"""
 
         val format = XML {
-            indent = 4
+            indentString = " ".repeat(4)
         }
 
         val serializedModel = format.stringify(MyExampleGroup.serializer(), group)

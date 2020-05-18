@@ -4,12 +4,6 @@ val usedKotlinVersion   = properties["kotlinVersion"] // "1.3.72"
 val xmlutilVersion      = properties["xmlutilVersion"]
 val kotlinJdkVersion    = properties["kotlinJdkVersion"]
 
-buildscript {
-    repositories {
-        maven(url = "https://dl.bintray.com/pdvrieze/maven")
-    }
-}
-
 plugins {
     id("java-library")
     id("kotlin")

@@ -35,7 +35,7 @@ dependencies {
     implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
 
     // Use the Kotlin JDK 8 standard library.
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk$kotlinJdkVersion:$usedKotlinVersion")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk$kotlinJdkVersion")
 
     // Use the Kotlin test library.
     testImplementation("org.jetbrains.kotlin:kotlin-test")
@@ -47,9 +47,8 @@ dependencies {
     testImplementation(project(":libModelExamples"))
     // Because of missing maven dependency management when referencing to a local project:
     // XML-Serialization
-    testImplementation("net.devrieze:xmlutil:$xmlutilVersion")
+    // JVM/Gradle plugin project
     testImplementation("net.devrieze:xmlutil-jvm:$xmlutilVersion")
-    //testImplementation("net.devrieze:xmlutil-serialization:$xmlutilVersion")
     testImplementation("net.devrieze:xmlutil-serialization-jvm:$xmlutilVersion")
 }
 

@@ -14,7 +14,7 @@ val kotlinJdkVersion    = properties["kotlinJdkVersion"]
 
 plugins {
     // Apply the Java Gradle plugin development plugin to add support for developing Gradle plugins
-    `java-gradle-plugin`
+    id("java-gradle-plugin")
 
     // Apply the Kotlin JVM plugin to add support for Kotlin:
     // TODO: a kotlin dsl bug does not let us use the variable:

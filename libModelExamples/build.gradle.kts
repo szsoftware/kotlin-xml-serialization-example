@@ -26,15 +26,15 @@ dependencies {
     // -------------------------------------------------------------------
     // Multiplatform (can run on any supported platform):
     // Core:
-    implementation("net.devrieze:xmlutil:$xmlutilVersion")
+    //implementation("net.devrieze:xmlutil:$xmlutilVersion")
     // Serialization
-    implementation("net.devrieze:xmlutil-serialization:$xmlutilVersion")
+    //implementation("net.devrieze:xmlutil-serialization:$xmlutilVersion")
 
     // Standard jvm (e.g. Gradle plugin project running directly on developing machine)
     implementation("net.devrieze:xmlutil-jvm:$xmlutilVersion")
     implementation("net.devrieze:xmlutil-serialization-jvm:$xmlutilVersion")
 
-    /* TODO: Still "Could not resolve:" ... (bintray)
+    /* TODO: Still "Could not resolve:" ... (bintray) See: https://github.com/pdvrieze/xmlutil/issues/26
     // Android (e.g. Android project where the code, respectively serializable model, runs on an android device)
     implementation("net.devrieze:xmlutil-android:$xmlutilVersion")
     implementation("net.devrieze:xmlutil-serialization-android:$xmlutilVersion")
@@ -43,5 +43,4 @@ dependencies {
     implementation("net.devrieze:xmlutil-js:$xmlutilVersion")
     implementation("net.devrieze:xmlutil-serialization-js:$xmlutilVersion")
     */
-
 }
